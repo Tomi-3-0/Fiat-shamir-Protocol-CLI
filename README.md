@@ -3,13 +3,21 @@
 ### Introduction
 A cryptographic protocol is a distributed algorithm describing precisely the interactions between two or more entities, achieving certain security objectives.
 
-There are basically two forms of authentication schemes: interactive authentication schemes (e.g., identification schemes) and noninteractive authentication schemes (e.g., digital signature schemes). Similarly, one may distinguish two forms of zero-knowledge proof schemes: interactive proof schemes and noninteractive proof schemes. 
+There are basically two forms of authentication schemes: interactive authentication schemes (e.g., identification schemes) and noninteractive authentication schemes (e.g., digital signature schemes). Likewise, one may distinguish two forms of zero-knowledge proof schemes: interactive proof schemes and noninteractive proof schemes. 
 
-An interactive proof scheme comprises a protocol by which a prover convinces a verifier that a certain statement holds. A noninteractive (zero-knowledge) proof scheme comprises an algorithm by which a prover generates a proof for a certain statement and another algorithm by which a verifier may verify a given proof. The prover does not reveal anything that might cause danger to the confidentiality of the secret. The prover proves to the verifier that she knows a secret, without revealing it. The interactions are so designed that the the verifier only knows that the prover does or does not have the secret, nothing more.
+An interactive proof scheme involves a protocol where a prover convinces a verifier of a statement's truth.
 
-A distinctive feature of a noninteractive Σ-proof is that any entity may play the role of the verifier. As a consequence, a noninteractive Σ-proof can be verified independently by many entities—just as a digital signature can be verified by anyone who is interested in its validity.
+![interactive zero-knowledge](images/interactive_zk.webp)
+<div style ="text-align: center; padding-bottom: 10px; margin-top: -10px">Figure 1: Interactive zero-knowledge proofs (Momin, 2023)</div>
 
-The Fiat–Shamir heuristic is a practical scheme for zero-knowledge identification and a simple but effective way to make any Σ-protocol noninteractive.
+A noninteractive proof scheme includes algorithms for a prover to generate a proof and a verifier to verify it, ensuring confidentiality. The prover proves knowledge of a secret to the verifier without disclosing it, ensuring that the verifier only learns whether the prover has the secret or not.
+
+![non-interactive zero-knowledge](images/non-interactive_zk.webp)
+<div style ="text-align: center; padding-bottom: 10px; margin-top: -10px">Figure 2: Non-interactive zero-knowledge proofs (Momin, K. 2023)</div>
+
+A unique feature of a noninteractive Σ-proof is its ability for any entity to act as the verifier. This means that multiple entities can independently verify the proof, similar to how anyone interested in its validity can verify a digital signature.
+
+The Fiat–Shamir heuristic simplifies Σ-protocols into noninteractive forms, enabling practical zero-knowledge identification.
 
 ### Overview
 In the Fiat-Shamir protocol, a trusted third party chooses two large prime
@@ -29,6 +37,10 @@ either knows the value of s (she is honest) or she has calculated the value of
 
  ![alt text](images/fiat-p.png)
 
+
+### Summary (Suitability of Fiat-Shamir Hash Functions in Various Protocols)
+Fiat Shamir is sound when using  a Random Oracle model (and ZK for some suitable definitions) but totally broken using any instantiation. It sometimes require a cryptographic hash function. For certain protocols such as Lyubashevsky, Schnorr, Chaum-Pedersen simple FS hash functions can be enough. But for many classic protocols such as GMR85, Blum86 and GMW86 cryptographic FS hash functions are imperative.
+
 ### References
 1. Schoenmakers, B. (2024, February 2). Lecture Notes Cryptographic Protocols. https://www.win.tue.nl/~berry/CryptographicProtocols/LectureNotes.pdf.
 
@@ -38,3 +50,7 @@ either knows the value of s (she is honest) or she has calculated the value of
 
 4. Forouzan, B.A.: Cryptography & Network Security. First edn. McGraw-Hill Press, 
 United Kingdom (2008)
+
+5. Momin, K. (2023, April 4). A Non-Mathematical introduction to zero knowledge proof. Medium. Retrieved March 27, 2024, from https://kayprasla.medium.com/a-non-mathematical-introduction-to-zero-knowledge-proof-c1a4a269e308
+
+6. Wikipedia contributors. (2024, February 29). Random oracle. Wikipedia. https://en.wikipedia.org/wiki/Random_oracle
