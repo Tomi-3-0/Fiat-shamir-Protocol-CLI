@@ -1,0 +1,4 @@
+github.com/btcsuite/btcd/btcec/v2
+
+//not sure
+go get github.com/btcsuite/btcd
