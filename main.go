@@ -8,7 +8,7 @@ import "fiat-shamir/cmd"
 
 func main() {
 	cmd.Execute()
-	cmd.Main()
+	// cmd.Main()
 }
 
 
