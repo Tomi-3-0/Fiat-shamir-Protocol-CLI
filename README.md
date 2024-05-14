@@ -22,12 +22,12 @@ There are basically two forms of authentication schemes: interactive authenticat
 An interactive proof scheme involves a protocol where a prover convinces a verifier of a statement's truth.
 
 ![interactive zero-knowledge](images/interactive_zk.webp)
-<div style ="text-align: center; padding-bottom: 10px; margin-top: -10px">Figure 1: Interactive zero-knowledge proofs (Momin, 2023)</div>
+<div style ="text-align: center; padding-bottom: 10px; margin-top: -10px">Figure 1: Interactive proofs (Momin, 2023)</div>
 
 A noninteractive proof scheme includes algorithms for a prover to generate a proof and a verifier to verify it, ensuring confidentiality. The prover proves knowledge of a secret to the verifier without disclosing it, ensuring that the verifier only learns whether the prover has the secret or not.
 
 ![non-interactive zero-knowledge](images/non-interactive_zk.webp)
-<div style ="text-align: center; padding-bottom: 10px; margin-top: -10px">Figure 2: Non-interactive zero-knowledge proofs (Momin, K. 2023)</div>
+<div style ="text-align: center; padding-bottom: 10px; margin-top: -10px">Figure 2: Non-interactive proofs (Momin, K. 2023)</div>
 
 A unique feature of a noninteractive Σ-proof is its ability for any entity to act as the verifier. This means that multiple entities can independently verify the proof, similar to how anyone interested in its validity can verify a digital signature.
 
